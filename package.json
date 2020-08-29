@@ -1,0 +1,35 @@
+{
+  "name": "agricarta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": "git+https://github.com/misaki0915/AGRICARTA.git",
+  "keywords": [],
+  "author": "misaki0915",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misaki0915/AGRICARTA/issues"
+  },
+  "homepage": "https://github.com/misaki0915/AGRICARTA#readme",
+  "dependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
