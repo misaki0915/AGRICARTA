@@ -1,16 +1,17 @@
-#game_h1title{
+#game_h1title {
   text-align: center;
   margin: 47px 0;
   font-size: 400%;
-  font-family: 'IM Fell DW Pica SC', serif;
-  color: #D5C36E;
-  background: linear-gradient(transparent 30%, #F4A03F 50%, white 80%);
-  text-shadow: -1px -1px #585425, 1px -1px #585425, 1px 1px #585425, -1px 1px #585425,
-               -2px -2px #CB9D5E, 2px -2px #CB9D5E, 2px 2px #CB9D5E, -2px 2px #CB9D5E,
-               -3px -3px #585425, 3px -3px #585425, 3px 3px #585425, -3px 3px #585425;
+  font-family: "IM Fell DW Pica SC", serif;
+  color: #d5c36e;
+  background: linear-gradient(transparent 30%, #f4a03f 50%, white 80%);
+  text-shadow: -1px -1px #585425, 1px -1px #585425, 1px 1px #585425,
+    -1px 1px #585425, -2px -2px #cb9d5e, 2px -2px #cb9d5e, 2px 2px #cb9d5e,
+    -2px 2px #cb9d5e, -3px -3px #585425, 3px -3px #585425, 3px 3px #585425,
+    -3px 3px #585425;
 }
 
-.game_screen{
+.game_screen {
   min-width: 500px;
   max-width: 900px;
   margin: auto;
@@ -25,54 +26,54 @@
   font-size: 200px;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  color: #CB9D5E;
-  background: #ECECEC;
-  transition: .4s;
+  color: #cb9d5e;
+  background: #ececec;
+  transition: 0.4s;
 }
 
 .btn-flat-simple:hover {
-  background: #CB9D5E;
+  background: #cb9d5e;
   color: #585425;
 }
 
 #retrieval_text_btn {
-	position: relative;
-	width: 100%;
-	margin: 40px 3%;
+  position: relative;
+  width: 100%;
+  margin: 40px 3%;
   text-align: left;
 }
 
-#retrieval_text_btn input[type=text] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 30%;
-	margin: 8px 0;
-	padding: 0.3em;
-	transition: 0.3s;
-	border: 1px solid #1b2538;
-	border-radius: 4px;
-	outline: none;
+#retrieval_text_btn input[type="text"] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 8px 0;
+  padding: 0.3em;
+  transition: 0.3s;
+  border: 1px solid #1b2538;
+  border-radius: 4px;
+  outline: none;
 }
 
-#retrieval_text_btn input[type=text]:focus {
-	border-color: #da3c41;
+#retrieval_text_btn input[type="text"]:focus {
+  border-color: #da3c41;
 }
 
-#retrieval_text_btn input[type=text] {
-	padding-left: 40px;
+#retrieval_text_btn input[type="text"] {
+  padding-left: 40px;
 }
 
 #retrieval_text_btn i {
-	position: absolute;
-	top: 8px;
-	left: 0;
-	padding: 9px 8px;
-	transition: 0.3s;
-	color: #aaaaaa;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  padding: 9px 8px;
+  transition: 0.3s;
+  color: #aaaaaa;
 }
 
-#retrieval_text_btn input[type=text]:focus + i {
-	color: #da3c41;
+#retrieval_text_btn input[type="text"]:focus + i {
+  color: #da3c41;
 }
 
 #retrieval_btn {
@@ -82,16 +83,17 @@
   padding: 0.25em 0.5em;
   margin: 0;
   text-decoration: none;
-  color: #FFF;
-  background: #fd9535;/*色*/
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  color: #fff;
+  background: #fd9535; /*色*/
+  border-radius: 4px; /*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
-  border: solid 2px #d27d00;/*線色*/
+  border: solid 2px #d27d00; /*線色*/
 }
 
 #retrieval_btn:active {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 #retrieval_text {
@@ -114,21 +116,22 @@
   border-radius: 5px 5px 0 0;
 }
 
-#question_area{ /*test*/
+#question_area {
+  /*test*/
   min-height: 300px;
   width: 50%;
   padding: 1em;
 }
 
-#question_text{
+#question_text {
   min-height: 200px;
 }
 
-.set_next_btn{
-  width:50px;
-  min-height:55px;
-  max-height:55px;
-  outline : none;
+.set_next_btn {
+  width: 50px;
+  min-height: 55px;
+  max-height: 55px;
+  outline: none;
   position: relative;
   border-radius: 50%;
   color: #fff;
@@ -163,40 +166,42 @@
   bottom: -4px;
   margin-bottom: 4px;
   border: none;
-  box-shadow: 1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, .3);
+  box-shadow: 1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-#word_count{
+#word_count {
   min-width: 85%;
   min-height: 65px;
 }
 
-#qa_result_area{
+#qa_result_area {
   width: 50%;
 }
 
-#qa_result_area .qa_result_area_blue, .qa_result_area_red{
-    font-size: 1.2em;
-    background: #5fb3f5;
-    padding: 4px;
-    text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
+#qa_result_area .qa_result_area_blue,
+.qa_result_area_red {
+  font-size: 1.2em;
+  background: #5fb3f5;
+  padding: 4px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
-#qa_result_area .qa_result_area_red{
+#qa_result_area .qa_result_area_red {
   background: #f08080;
 }
 
-#qa_result_area p, li {
-    padding: 15px 20px;
-    margin: 0;
-    background: #f5f5f5;
+#qa_result_area p,
+li {
+  padding: 15px 20px;
+  margin: 0;
+  background: #f5f5f5;
 }
 
 #qa_result_area li {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .accessory {
@@ -204,65 +209,65 @@
   margin: 5em;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.player_answer{
+.player_answer {
   outline: none;
   position: relative;
   display: inline-block;
   padding: 0.25em 0.5em;
   margin: 0;
   text-decoration: none;
-  color: #FFF;
-  background: #a0522d;/*色*/
-  border-radius: 4px;/*角の丸み*/
+  color: #fff;
+  background: #a0522d; /*色*/
+  border-radius: 4px; /*角の丸み*/
   box-shadow: inset 0 2px 0 #d2691e, inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
-  border: solid 2px #804012;/*線色*/
+  border: solid 2px #804012; /*線色*/
 }
 
 .player_answer:active {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 #answer_area {
-	position: relative;
-	width: 100%;
-	margin: 40px 3%;
+  position: relative;
+  width: 100%;
+  margin: 40px 3%;
   text-align: left;
 }
 
-#answer_area input[type=text] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 30%;
-	margin: 8px 0;
-	padding: 0.3em;
-	transition: 0.3s;
-	border: 1px solid #1b2538;
-	border-radius: 4px;
-	outline: none;
+#answer_area input[type="text"] {
+  font: 15px/24px sans-serif;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 8px 0;
+  padding: 0.3em;
+  transition: 0.3s;
+  border: 1px solid #1b2538;
+  border-radius: 4px;
+  outline: none;
 }
 
-#answer_area input[type=text]:focus {
-	border-color: #da3c41;
+#answer_area input[type="text"]:focus {
+  border-color: #da3c41;
 }
 
-#answer_area input[type=text] {
-	padding-left: 40px;
+#answer_area input[type="text"] {
+  padding-left: 40px;
 }
 
 #answer_area i {
-	position: absolute;
-	top: 8px;
-	left: 0;
-	padding: 9px 8px;
-	transition: 0.3s;
-	color: #aaaaaa;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  padding: 9px 8px;
+  transition: 0.3s;
+  color: #aaaaaa;
 }
 
-#answer_area input[type=text]:focus + i {
-	color: #da3c41;
+#answer_area input[type="text"]:focus + i {
+  color: #da3c41;
 }
