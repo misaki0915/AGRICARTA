@@ -25,6 +25,7 @@ class Game extends Component {
       gameNumber: 1,
       wordCount: 0,
       history: "",
+      disabled: false,
     };
   }
 
@@ -44,6 +45,46 @@ class Game extends Component {
           this.state.questionBlackText +
           textReadAloud[this.state.gameNumber - 1][this.state.wordCount],
       });
+    }
+    if (this.state.wordCount >= qa[this.state.gameNumber - 1][1].length - 1) {
+      this.setState({
+        disabled: true,
+      });
+    }
+  };
+
+  answerJudge = () => {
+    let playerAnswer = document.answer_form.player_answer.value;
+    if (playerAnswer === qa[this.state.gameNumber - 1][0]) {
+      let resultBlack = qa[this.state.gameNumber - 1][1].slice(
+        0,
+        qa[this.state.gameNumber - 1][2]
+      );
+      let resultRed = qa[this.state.gameNumber - 1][1].slice(
+        qa[this.state.gameNumber - 1][2],
+        qa[this.state.gameNumber - 1][1].length
+      );
+      document.getElementById("qa_result_area").innerHTML =
+        "<div class='qa_result_area_red'>◎正解</div>";
+      document.getElementById("qa_result_area").innerHTML +=
+        "<p>" +
+        qa[this.state.gameNumber - 1][0] +
+        "：" +
+        resultBlack +
+        resultRed;
+      this.setState({
+        gameNumber: this.state.gameNumber + 1,
+        wordCount: 0,
+        questionBlackText: "",
+        questionRedText: "",
+        disabled: false,
+      });
+    } else {
+      this.setState({
+        history: this.state.history + "<li>" + playerAnswer + "</li>",
+      });
+      document.getElementById("qa_result_area").innerHTML =
+        "<div class='qa_result_area_blue'>× 不正解</div>" + this.state.history;
     }
   };
 
@@ -71,6 +112,7 @@ class Game extends Component {
                   id="set_next_btn"
                   className="set_next_btn"
                   onClick={this.setNextText}
+                  disabled={this.state.disabled}
                 >
                   ▷
                 </button>
@@ -90,7 +132,7 @@ class Game extends Component {
               className="player_answer"
               type="button"
               value="回答"
-              // onClick={answer_judge()}
+              onClick={this.answerJudge}
             ></input>
           </form>
         </div>
@@ -104,34 +146,6 @@ class Game extends Component {
 export default App;
 
 /*
-
-function answer_judge() {
-  var playerAnswer = document.answer_form.player_answer.value;
-  if (playerAnswer === qa[gameNumber - 1][0]) {
-    let resultBlack = qa[gameNumber - 1][1].slice(0, qa[gameNumber - 1][2]);
-    let resultRed = qa[gameNumber - 1][1].slice(
-      qa[gameNumber - 1][2],
-      qa[gameNumber - 1][1].length
-    );
-    document.getElementById("qa_result_area").innerHTML =
-      "<div class='qa_result_area_red'>◎正解</div>";
-    document.getElementById("qa_result_area").innerHTML +=
-      "<p>" + qa[gameNumber - 1][0] + "：" + resultBlack + resultRed;
-    gameNumber++;
-    wordCount = 0;
-    questionBlackText = questionRedText = "";
-    document.getElementById("game_number").innerHTML =
-      "<font size='6'>" + gameNumber + "</font>問目";
-    document.getElementById("next_area").innerHTML =
-      "<input type='button' value='▷' id='set_next_btn' class='set_next_btn' onclick='setNextText()'>";
-    setNextText();
-  } else {
-    history += "<li>" + playerAnswer + "</li>";
-    document.getElementById("qa_result_area").innerHTML =
-      "<div class='qa_result_area_blue'>×不正解</div><p>これまでの回答</p>" +
-      history;
-  }
-}
 
 function retrieval_judge() {
   var retrievalWord = document.retrieval_form.retrieval.value;
