@@ -73,6 +73,7 @@ export default class Game extends Component {
         wordCount: 0,
         questionBlackText: "",
         questionRedText: "",
+        history: "",
         disabled: false,
       });
     } else {
