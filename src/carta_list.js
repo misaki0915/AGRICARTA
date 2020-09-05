@@ -648,7 +648,7 @@ for (let x = 0; x < qa.length; x++) {
 for (var gn = 0; gn < qa.length; gn++) {
   for (var j = gn + 1; j < qa.length; j++) {
     for (var textSplit = 0; textSplit < 100; textSplit++) {
-      if (textDetermined[gn][textSplit] == textDetermined[j][textSplit]) {
+      if (textDetermined[gn][textSplit] === textDetermined[j][textSplit]) {
       } else {
         if (qa[gn][2] < textSplit) {
           qa[gn][2] = textSplit;
