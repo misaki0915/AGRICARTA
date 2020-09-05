@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import qa from "./carta_list";
 
-const App = () => {
-  return <Game />;
-};
-
 let textReadAloud = [];
 
 for (let i = qa.length - 1; i >= 0; i--) {
@@ -16,7 +12,7 @@ for (let i = 0; i < qa.length; i++) {
   textReadAloud[i] = qa[i][1].split("");
 }
 
-class Game extends Component {
+export default class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,30 +84,6 @@ class Game extends Component {
     }
   };
 
-  retrievalJudge = () => {
-    let retrievalWord = document.retrieval_form.retrieval.value;
-    for (let i = 0; i < qa.length; i++) {
-      if (qa[i][0] === retrievalWord) {
-        let resultBlack = qa[i][1].slice(0, qa[i][2]);
-        let resultRed = qa[i][1].slice(qa[i][2], qa[i][1].length);
-        document.getElementById("retrieval_result_box").innerHTML =
-          "<div id='retrieval_text'></div>";
-        document.getElementById("retrieval_text").innerHTML =
-          "<span class='box-title'>" + retrievalWord + "</span>";
-        document.getElementById("retrieval_text").innerHTML +=
-          resultBlack + "<font color='red'>" + resultRed + "</font>";
-        break;
-      } else if (retrievalWord === "") {
-        document.getElementById("retrieval_result_box").innerHTML = "";
-      } else {
-        document.getElementById("retrieval_result_box").innerHTML =
-          "<font color='red'>「" +
-          retrievalWord +
-          "」は職業一覧から見つかりませんでした。</font>";
-      }
-    }
-  };
-
   render() {
     return (
       <>
@@ -160,23 +132,7 @@ class Game extends Component {
             ></input>
           </form>
         </div>
-        <div>
-          <img src="img/agri_line.png" alt="line" width="100%" />
-          <div id="retrieval_text_btn">
-            <form name="retrieval_form">
-              <input
-                className="retrieval_word"
-                type="text"
-                name="retrieval"
-                placeholder="職業名で検索"
-                onChange={this.retrievalJudge}
-              />
-            </form>
-          </div>
-          <div id="retrieval_result_box"></div>
-        </div>
       </>
     );
   }
 }
-export default App;
