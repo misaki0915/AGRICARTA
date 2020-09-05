@@ -639,18 +639,16 @@ qa[168] = [
 ];
 
 var textDetermined = [];
-let dc;
-let x;
-for (dc = 0; dc < qa.length; dc++) {
+for (let dc = 0; dc < qa.length; dc++) {
   textDetermined[dc] = qa[dc][1].split("");
 }
-for (x = 0; x < qa.length; x++) {
+for (let x = 0; x < qa.length; x++) {
   qa[x][2] = 0;
 }
 for (var gn = 0; gn < qa.length; gn++) {
   for (var j = gn + 1; j < qa.length; j++) {
     for (var textSplit = 0; textSplit < 100; textSplit++) {
-      if (textDetermined[gn][textSplit] === textDetermined[j][textSplit]) {
+      if (textDetermined[gn][textSplit] == textDetermined[j][textSplit]) {
       } else {
         if (qa[gn][2] < textSplit) {
           qa[gn][2] = textSplit;
@@ -663,3 +661,5 @@ for (var gn = 0; gn < qa.length; gn++) {
     }
   }
 }
+
+export default qa;
