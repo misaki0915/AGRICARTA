@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./app.js",
+  entry: "./index.htmml",
   output: {
     path: `${__dirname}/dist`,
     filename: "bundle.js",
