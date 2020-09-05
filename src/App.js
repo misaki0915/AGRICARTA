@@ -88,6 +88,30 @@ class Game extends Component {
     }
   };
 
+  retrievalJudge = () => {
+    let retrievalWord = document.retrieval_form.retrieval.value;
+    for (let i = 0; i < qa.length; i++) {
+      if (qa[i][0] === retrievalWord) {
+        let resultBlack = qa[i][1].slice(0, qa[i][2]);
+        let resultRed = qa[i][1].slice(qa[i][2], qa[i][1].length);
+        document.getElementById("retrieval_result_box").innerHTML =
+          "<div id='retrieval_text'></div>";
+        document.getElementById("retrieval_text").innerHTML =
+          "<span class='box-title'>" + retrievalWord + "</span>";
+        document.getElementById("retrieval_text").innerHTML +=
+          resultBlack + "<font color='red'>" + resultRed + "</font>";
+        break;
+      } else if (retrievalWord === "") {
+        document.getElementById("retrieval_result_box").innerHTML = "";
+      } else {
+        document.getElementById("retrieval_result_box").innerHTML =
+          "<font color='red'>「" +
+          retrievalWord +
+          "」は職業一覧から見つかりませんでした。</font>";
+      }
+    }
+  };
+
   render() {
     return (
       <>
@@ -137,36 +161,22 @@ class Game extends Component {
           </form>
         </div>
         <div>
-          <div></div>
+          <img src="img/agri_line.png" alt="line" width="100%" />
+          <div id="retrieval_text_btn">
+            <form name="retrieval_form">
+              <input
+                className="retrieval_word"
+                type="text"
+                name="retrieval"
+                placeholder="職業名で検索"
+                onChange={this.retrievalJudge}
+              />
+            </form>
+          </div>
+          <div id="retrieval_result_box"></div>
         </div>
       </>
     );
   }
 }
 export default App;
-
-/*
-
-function retrieval_judge() {
-  var retrievalWord = document.retrieval_form.retrieval.value;
-  for (var ch = 0; ch < qa.length; ch++) {
-    if (qa[ch][0] == retrievalWord) {
-      let resultBlack = qa[ch][1].slice(0, qa[ch][2]);
-      let resultRed = qa[ch][1].slice(qa[ch][2], qa[ch][1].length);
-      document.getElementById("retrieval_result_box").innerHTML =
-        "<div id='retrieval_text'></div>";
-      document.getElementById("retrieval_text").innerHTML =
-        "<span class='box-title'>" + retrievalWord + "</span>";
-      document.getElementById("retrieval_text").innerHTML +=
-        resultBlack + "<font color='red'>" + resultRed + "</font>";
-      break;
-    } else {
-      document.getElementById("retrieval_result_box").innerHTML =
-        "<font color='red'>「" +
-        retrievalWord +
-        "」は職業一覧から見つかりませんでした。</font>";
-    }
-  }
-}
-
-*/
