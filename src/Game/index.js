@@ -22,6 +22,7 @@ export default class Game extends Component {
       wordCount: 0,
       history: "",
       disabled: false,
+      skipDisabled: false,
     };
   }
 
@@ -34,6 +35,7 @@ export default class Game extends Component {
         questionRedText:
           this.state.questionRedText +
           textReadAloud[this.state.gameNumber - 1][this.state.wordCount],
+        skipDisabled: true,
       });
     } else {
       this.setState({
@@ -45,8 +47,24 @@ export default class Game extends Component {
     if (this.state.wordCount >= qa[this.state.gameNumber - 1][1].length - 1) {
       this.setState({
         disabled: true,
+        skipDisabled: true,
       });
     }
+  };
+
+  setDetermineCharacter = () => {
+    this.setState({
+      questionBlackText: qa[this.state.gameNumber - 1][1].slice(
+        0,
+        qa[this.state.gameNumber - 1][2]
+      ),
+      questionRedText: qa[this.state.gameNumber - 1][1].slice(
+        qa[this.state.gameNumber - 1][2],
+        qa[this.state.gameNumber - 1][2] + 1
+      ),
+      wordCount: qa[this.state.gameNumber - 1][2] + 1,
+      skipDisabled: true,
+    });
   };
 
   answerJudge = () => {
@@ -75,6 +93,7 @@ export default class Game extends Component {
         questionRedText: "",
         history: "",
         disabled: false,
+        skipDisabled: false,
       });
     } else {
       this.setState({
@@ -118,8 +137,8 @@ export default class Game extends Component {
                   type="button"
                   id="set_next_btn"
                   className="set_next_btn"
-                  onClick={this.setNextText}
-                  disabled={this.state.disabled}
+                  onClick={this.setDetermineCharacter}
+                  disabled={this.state.skipDisabled}
                 >
                   ▶︎▶︎
                 </button>
