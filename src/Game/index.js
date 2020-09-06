@@ -85,7 +85,9 @@ export default class Game extends Component {
         qa[this.state.gameNumber - 1][0] +
         "：" +
         resultBlack +
-        resultRed;
+        "<font color='red'>" +
+        resultRed +
+        "</font>";
       this.setState({
         gameNumber: this.state.gameNumber + 1,
         wordCount: 0,
