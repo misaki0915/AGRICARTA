@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import qa from "./carta_list";
+import qa from "../carta_list";
 
 let textReadAloud = [];
 

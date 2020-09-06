@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import agriLine from "./img/agri_line.png";
 import Title from "./Title";
-import Game from "./Game";
+import Game from "./Game/index";
 import Search from "./Search";
 import { Image } from "./Image";
 
