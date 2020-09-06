@@ -9,6 +9,8 @@ import {
   disabledState,
   skipDisabledState,
   historyState,
+  correctAnswerState,
+  incorrectAnswerState,
 } from "./addModal";
 
 export const AnswerForm = () => {
@@ -19,6 +21,8 @@ export const AnswerForm = () => {
   const [, setdisabled] = useRecoilState(disabledState);
   const [, setskipDisabled] = useRecoilState(skipDisabledState);
   const [history, sethistory] = useRecoilState(historyState);
+  const [, setCorrectAnswer] = useRecoilState(correctAnswerState);
+  const [, setIncorrectAnswer] = useRecoilState(incorrectAnswerState);
 
   const answerJudge = () => {
     let playerAnswer = document.answer_form.player_answer.value;
@@ -28,9 +32,9 @@ export const AnswerForm = () => {
         qa[gameNumber - 1][2],
         qa[gameNumber - 1][1].length
       );
-      document.getElementById("qa_result_area").innerHTML =
-        "<div class='qa_result_area_red'>◎正解</div>";
-      document.getElementById("qa_result_area").innerHTML +=
+      setCorrectAnswer("◎ 正解");
+      setIncorrectAnswer("");
+      document.getElementById("qa_description").innerHTML =
         "<p>" +
         qa[gameNumber - 1][0] +
         "：" +
@@ -46,8 +50,10 @@ export const AnswerForm = () => {
       setskipDisabled(false);
     } else {
       sethistory(history + "<li>" + playerAnswer + "</li>");
-      document.getElementById("qa_result_area").innerHTML =
-        "<div class='qa_result_area_blue'>× 不正解</div>" + history;
+      setCorrectAnswer("");
+      setIncorrectAnswer("× 不正解");
+      document.getElementById("qa_description").innerHTML =
+        history + "<li>" + playerAnswer + "</li>";
     }
   };
 

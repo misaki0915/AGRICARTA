@@ -5,6 +5,7 @@ import { DetermineCharacterButton } from "./DetermineCharacterButton";
 import { AnswerForm } from "./AnswerForm";
 import { QuestionText } from "./QuestionText";
 import { GameNumber } from "./GameNumber";
+import { Result } from "./Result";
 
 export const Game = () => {
   return (
@@ -19,7 +20,7 @@ export const Game = () => {
             <DetermineCharacterButton />
           </div>
         </div>
-        <div id="qa_result_area"></div>
+        <Result />
       </div>
       <AnswerForm />
     </>

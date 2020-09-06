@@ -51,3 +51,13 @@ export const historyState = atom({
   key: "history",
   default: "",
 });
+
+export const correctAnswerState = atom({
+  key: "correctAnswer",
+  default: "",
+});
+
+export const incorrectAnswerState = atom({
+  key: "incorrectAnswer",
+  default: "",
+});
