@@ -8,10 +8,12 @@ import { Image } from "./Image";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Title />
-    <Game />
-    <Image src={agriLine} />
-    <Search />
+    <div class="game_screen">
+      <Title />
+      <Game />
+      <Image src={agriLine} />
+      <Search />
+    </div>
   </React.StrictMode>,
   document.getElementById("root")
 );
