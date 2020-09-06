@@ -638,20 +638,20 @@ qa[168] = [
   "ほかの人が種をまくたびに3人ゲームでは小麦1、それ以外は食料1を得る。（自分で種をまいても効果はない）",
 ];
 
-var textDetermined = [];
+let textDetermined = [];
 for (let dc = 0; dc < qa.length; dc++) {
   textDetermined[dc] = qa[dc][1].split("");
 }
 for (let x = 0; x < qa.length; x++) {
   qa[x][2] = 0;
 }
-for (var gn = 0; gn < qa.length; gn++) {
-  for (var j = gn + 1; j < qa.length; j++) {
-    for (var textSplit = 0; textSplit < 100; textSplit++) {
-      if (textDetermined[gn][textSplit] === textDetermined[j][textSplit]) {
+for (let i = 0; i < qa.length; i++) {
+  for (let j = i + 1; j < qa.length; j++) {
+    for (let textSplit = 0; textSplit < 100; textSplit++) {
+      if (textDetermined[i][textSplit] === textDetermined[j][textSplit]) {
       } else {
-        if (qa[gn][2] < textSplit) {
-          qa[gn][2] = textSplit;
+        if (qa[i][2] < textSplit) {
+          qa[i][2] = textSplit;
         }
         if (qa[j][2] < textSplit) {
           qa[j][2] = textSplit;

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import qa from "./carta_list";
 
-export default class Search extends Component {
-  retrievalJudge = () => {
+export const Search = () => {
+  const retrievalJudge = () => {
     let retrievalWord = document.retrieval_form.retrieval.value;
     for (let i = 0; i < qa.length; i++) {
       if (qa[i][0] === retrievalWord) {
@@ -28,22 +28,20 @@ export default class Search extends Component {
     }
   };
 
-  render() {
-    return (
-      <>
-        <div id="retrieval_text_btn">
-          <form name="retrieval_form">
-            <input
-              className="retrieval_word"
-              type="text"
-              name="retrieval"
-              placeholder="職業名で検索"
-              onChange={this.retrievalJudge}
-            />
-          </form>
-        </div>
-        <div id="retrieval_result_box"></div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div id="retrieval_text_btn">
+        <form name="retrieval_form">
+          <input
+            className="retrieval_word"
+            type="text"
+            name="retrieval"
+            placeholder="職業名で検索"
+            onChange={retrievalJudge}
+          />
+        </form>
+      </div>
+      <div id="retrieval_result_box"></div>
+    </>
+  );
+};

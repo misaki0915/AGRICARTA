@@ -4,7 +4,7 @@ import { RecoilRoot } from "recoil";
 import agriLine from "./img/agri_line.png";
 import Title from "./Title";
 import { Game } from "./Game/index";
-import Search from "./Search";
+import { Search } from "./Search";
 import { Image } from "./Image";
 
 ReactDOM.render(
