@@ -99,10 +99,11 @@ export default class Game extends Component {
                 <font color="red">{this.state.questionRedText}</font>
               </p>
             </div>
+
+            <div id="word_count">
+              <font size="5">{this.state.wordCount}</font>文字目
+            </div>
             <div className="flex">
-              <div id="word_count">
-                <font size="5">{this.state.wordCount}</font>文字目
-              </div>
               <div id="next_area">
                 <button
                   type="button"
@@ -111,7 +112,16 @@ export default class Game extends Component {
                   onClick={this.setNextText}
                   disabled={this.state.disabled}
                 >
-                  ▷
+                  ▶︎
+                </button>
+                <button
+                  type="button"
+                  id="set_next_btn"
+                  className="set_next_btn"
+                  onClick={this.setNextText}
+                  disabled={this.state.disabled}
+                >
+                  ▶︎▶︎
                 </button>
               </div>
             </div>
